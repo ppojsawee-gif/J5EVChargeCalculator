@@ -1,0 +1,16 @@
+วิธี Build APK ผ่าน GitHub Actions (ไม่ต้องติดตั้ง Android Studio)
+
+1) สมัคร/เข้าสู่ระบบ GitHub
+2) สร้าง Repository ใหม่ ตั้งชื่อ J5EVChargeCalculator
+3) แตกไฟล์ ZIP โปรเจกต์ แล้วอัปโหลดไฟล์และโฟลเดอร์ทั้งหมดเข้า Repository (รวมโฟลเดอร์ .github)
+4) รอให้ GitHub Actions ทำงานอัตโนมัติหลังอัปโหลด หรือเข้าแท็บ Actions แล้วเลือก workflow "Build J5 EV Charge Calculator APK" > Run workflow
+5) เมื่อสถานะเป็นสีเขียว ให้เปิดรายการ workflow run ล่าสุด
+6) เลื่อนลงไปที่ Artifacts แล้วดาวน์โหลด J5-EV-Charge-Calculator-debug
+7) แตกไฟล์ ZIP ที่ดาวน์โหลด จะพบ app-debug.apk
+8) ส่ง APK ไปยังโทรศัพท์ Android แล้วแตะติดตั้ง หากระบบถาม ให้เปิดอนุญาตติดตั้งแอปจากแหล่งที่มานี้
+
+ข้อควรทราบ:
+- APK นี้เป็น debug APK สำหรับติดตั้งทดสอบ ไม่ใช่รุ่นเผยแพร่บน Play Store
+- Android อาจแสดงคำเตือนเพราะเป็น APK ที่ติดตั้งจากภายนอก Play Store
+- ไม่ต้องใส่รหัสผ่านหรือ token ใน workflow นี้
+- โปรเจกต์ยังเป็นเวอร์ชันต้นแบบ ค่าคำนวณเป็นค่าประมาณ ไม่ได้อ่านข้อมูลแบตเตอรี่จริงจากรถ
